@@ -2,8 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomeLayout, Landing, Error, Newsletter, Cocktail } from './pages';
 
 // loader
-
 import { loader as CocktailDetailsLoader } from './pages/Cocktail';
+
+// actions
+import { action as newsletterAction } from './pages/Newsletter';
 
 function App() {
 	const router = createBrowserRouter([
@@ -19,6 +21,7 @@ function App() {
 				{
 					path: 'newsletter',
 					element: <Newsletter />,
+					action: newsletterAction,
 				},
 				{
 					path: 'cocktail/:id',

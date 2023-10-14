@@ -12,13 +12,13 @@ const Navbar = () => {
 						className='text-4xl lg:hidden'
 						onClick={() => {
 							setNavOpen(!navOpen);
-							console.log('clicked');
+							// console.log('clicked');
 						}}>
 						🍔
 					</h1>
 				</div>
 				<ul
-					className={` flex flex-col lg:flex-row  ${
+					className={`flex flex-col lg:flex-row  ${
 						navOpen ? 'flex' : 'hidden lg:flex'
 					} `}>
 					<Link className='p-2 lg:m-2 lg:p-4' to='/'>

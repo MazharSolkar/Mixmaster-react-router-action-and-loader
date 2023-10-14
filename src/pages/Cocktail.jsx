@@ -47,9 +47,19 @@
 // 	);
 // };
 
-// export default Cocktail;
+// export default Cocktail;0
 
 import { useLoaderData, useNavigation } from 'react-router-dom';
+
+export const loader = async ({ params }) => {
+	// console.log(params);
+	const response = await fetch(
+		`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${params.id}`
+	);
+	const productDetails = await response.json();
+	// console.log(productDetails.drinks[0]);
+	return productDetails.drinks[0];
+};
 
 const Cocktail = () => {
 	const loaderData = useLoaderData();
@@ -83,13 +93,3 @@ const Cocktail = () => {
 };
 
 export default Cocktail;
-
-export const loader = async ({ params }) => {
-	// console.log(params);
-	const response = await fetch(
-		`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${params.id}`
-	);
-	const productDetails = await response.json();
-	// console.log(productDetails.drinks[0]);
-	return productDetails.drinks[0];
-};
