@@ -2,7 +2,9 @@
 
 Instead, useNavigation() primarily helps you track whether the page is in the process of navigating to a different page or performing certain actions, such as submitting forms or making API requests.
 
-===
+# redirect :
+
+In action and loader don't use useNavigate instead use redirect, redirect is designed for action and loader.
 
 # loader :
 
@@ -58,8 +60,6 @@ export const loader = async ({ params }) => {
 	return productDetails.drinks[0];
 };
 ```
-
-===
 
 # action :
 
@@ -204,9 +204,3 @@ const Newsletter = () => {
 
 export default Newsletter;
 ```
-
-===
-
-# redirect :
-
-In action and loader don't use useNavigate instead use redirect, redirect is designed for action and loader.
